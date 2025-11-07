@@ -1,0 +1,91 @@
+.whyus-page {
+  min-height: 100vh;
+  background: #f5f9f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.whyus-container {
+  max-width: 950px;
+  margin: 2.5rem auto 1.5rem auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(56, 142, 60, 0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.whyus-container h1 {
+  font-size: 2.3rem;
+  color: #256325;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.whyus-intro {
+  color: #555;
+  font-size: 1.15rem;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  max-width: 700px;
+}
+
+.whyus-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.2rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: #e8f5e9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(56, 142, 60, 0.07);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 24px rgba(56, 142, 60, 0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.feature-icon {
+  font-size: 2.7rem;
+  color: #388e3c;
+  margin-bottom: 1rem;
+}
+
+.feature-card h2 {
+  font-size: 1.25rem;
+  color: #256325;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+
+.feature-card p {
+  color: #444;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .whyus-features {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .whyus-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .whyus-container h1 {
+    font-size: 1.6rem;
+  }
+}

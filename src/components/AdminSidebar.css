@@ -1,0 +1,43 @@
+.admin-sidebar {
+  width: 150px; /* reduced from 220px */
+  flex: 0 0 200px; /* match width */
+  border-right: 1px solid #e0e0e0;
+  padding: 12px 10px;
+  background: #fafafa;
+}
+.admin-sidebar-header {
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 10px;
+  padding: 6px 8px;
+}
+.admin-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.admin-side-link {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #2e7d32;
+  text-decoration: none;
+}
+.admin-side-link:hover {
+  background: #e8f5e9;
+}
+.admin-side-link.active {
+  background: #c8e6c9;
+  font-weight: 600;
+}
+
+/* Container helpers (used in DashboardLayout) */
+.dashboard-body-wrapper {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+.dashboard-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}

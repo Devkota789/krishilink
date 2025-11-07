@@ -1,0 +1,117 @@
+.contact-page {
+  min-height: 100vh;
+  background: #f5f9f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container {
+  max-width: 500px;
+  margin: 2.5rem auto 1.5rem auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(56, 142, 60, 0.08);
+  padding: 2.5rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-container h1 {
+  font-size: 2.1rem;
+  color: #256325;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container p {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-bottom: 1.7rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #388e3c;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.6rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid #388e3c;
+}
+
+.contact-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.send-btn {
+  background: #388e3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.7rem 1.3rem;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.send-btn:hover {
+  background: #256325;
+}
+
+.contact-info {
+  margin-top: 1.2rem;
+  width: 100%;
+  text-align: left;
+}
+
+.contact-info p {
+  color: #256325;
+  font-size: 1.05rem;
+  margin: 0.3rem 0;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .contact-container h1 {
+    font-size: 1.5rem;
+  }
+}

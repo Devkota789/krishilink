@@ -1,0 +1,482 @@
+:root {
+  --px: 24px;
+  /* Light, soft greenery */
+  --bg: linear-gradient(180deg, #eaf7ee 0%, #d7f0df 100%);
+  /* Cards and surfaces */
+  --card: #ffffff;
+  --muted: #6b7280;
+  --text: #1a1a1a;
+  --border: #e5e7eb;
+  --danger: #ef4444;
+  /* Semantic accents */
+  --success: #16a34a; /* deliver */
+  --ship: #f97316; /* ship */
+  --confirm: #2563eb; /* confirm */
+  --cancel: #dc2626; /* cancel */
+  --refund: #d4af37; /* gold */
+  --processing: #ffffff; /* white */
+  --primary: #2ea043; /* header action */
+  /* Details table tints (light mode) */
+  --details-bg: #f6fffa;
+  --details-head: #e6f4ea;
+  --details-border: #d1fae5;
+}
+
+.orders-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.orders-main {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-inline: var(--px);
+  flex: 1;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.orders-title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.orders-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.orders-actions .btn {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.orders-actions .btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.orders-toolbar {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 180px 180px 180px 180px;
+  gap: 12px;
+}
+
+.input,
+.select {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.error-box {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid var(--danger);
+  color: #991b1b;
+  background: #fee2e2;
+  border-radius: 8px;
+}
+
+.table-wrap {
+  margin-top: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.orders-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--details-head);
+  color: #0f5132;
+  text-align: left;
+  font-weight: 600;
+  padding: 12px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+
+.orders-table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.order-row:hover td {
+  background: #f0fdf4;
+}
+
+.items-row td {
+  background: var(--details-bg);
+}
+
+.items-wrap {
+  overflow: auto;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.items-table th,
+.items-table td {
+  padding: 8px 10px;
+  border-bottom: 1px dashed var(--details-border);
+}
+.items-table thead th {
+  background: var(--details-head);
+  color: #0f5132;
+}
+.items-table tbody tr:hover td {
+  background: #effaf5;
+}
+
+/* Order item image */
+.item-img-wrap {
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background: #f9fafb;
+}
+.item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.item-img.placeholder {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Second-line metadata for each order item */
+.item-subrow td {
+  background: #fafafa;
+  border-bottom: 1px dashed var(--details-border);
+}
+.subrow-meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+.subrow-meta .label {
+  font-weight: 600;
+  color: #374151;
+  margin-right: 6px;
+}
+.subrow-meta .value {
+  color: #111827;
+}
+.subrow-meta .sep {
+  color: #9ca3af;
+  margin: 0 8px;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  word-break: break-all;
+}
+.mono.small {
+  font-size: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px; /* ensure visible color behind text */
+  font-size: 12px;
+  line-height: 1.6;
+  border-radius: 9999px; /* pill shape */
+  background: transparent; /* default no highlight */
+  border: none;
+  color: #000000; /* status text always black */
+}
+.badge-success {
+  background: #16a34a; /* solid green */
+  color: white;
+}
+.badge-warn {
+  background: #fef3c7;
+}
+.badge-danger {
+  background: #dc2626; /* solid red */
+  color: white;
+}
+.badge-info {
+  background: #e0f2fe;
+}
+
+/* New badge variants for order/item statuses */
+.badge-processing {
+  background: #6b7280; /* solid gray */
+  color: white;
+}
+.badge-confirm {
+  background: #2563eb; /* solid blue */
+  color: white;
+}
+.badge-ship {
+  background: #ea580c; /* solid orange */
+  color: white;
+}
+
+/* Ensure solid backgrounds behind status text only within Admin Orders tables */
+.orders-table .badge,
+.items-table .badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: none;
+}
+.orders-table .badge-processing,
+.items-table .badge-processing {
+  background-color: #6b7280 !important; /* Processing: gray */
+  color: #ffffff !important;
+}
+.orders-table .badge-confirm,
+.items-table .badge-confirm {
+  background-color: #2563eb !important; /* Confirmed: blue */
+  color: #ffffff !important;
+}
+.orders-table .badge-ship,
+.items-table .badge-ship {
+  background-color: #ea580c !important; /* Shipped: orange */
+  color: #ffffff !important;
+}
+.orders-table .badge-success,
+.items-table .badge-success {
+  background-color: #16a34a !important; /* Delivered: green */
+  color: #ffffff !important;
+}
+.orders-table .badge-danger,
+.items-table .badge-danger {
+  background-color: #dc2626 !important; /* Cancelled: red */
+  color: #ffffff !important;
+}
+
+.btn {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.btn:hover {
+  filter: brightness(0.98);
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Color-coded action buttons */
+.btn-confirm,
+.btn.btn-confirm {
+  background: var(--confirm);
+  border-color: #1d4ed8;
+  color: #fff;
+}
+.btn-confirm:hover {
+  filter: brightness(0.95);
+}
+
+.btn-ship,
+.btn.btn-ship {
+  background: var(--ship);
+  border-color: #ea580c;
+  color: #fff;
+}
+.btn-ship:hover {
+  filter: brightness(0.95);
+}
+
+.btn-deliver,
+.btn.btn-deliver {
+  background: var(--success);
+  border-color: #15803d;
+  color: #fff;
+}
+.btn-deliver:hover {
+  filter: brightness(0.95);
+}
+
+.btn-cancel,
+.btn.btn-cancel {
+  background: var(--cancel);
+  border-color: #b91c1c;
+  color: #fff;
+}
+.btn-cancel:hover {
+  filter: brightness(0.95);
+}
+
+.btn-refund,
+.btn.btn-refund {
+  background: var(--refund);
+  color: #1a1a1a;
+  border-color: #b08b2c;
+}
+.btn-refund:hover {
+  filter: brightness(0.95);
+}
+
+.btn-processing {
+  background: var(--processing);
+  color: #12322a;
+  border-color: #a7b8af;
+}
+
+/* Additional colored buttons for View/More to match Users + Payments */
+.btn-view,
+.btn.btn-view {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #fff;
+}
+.btn-view:hover {
+  filter: brightness(0.95);
+}
+.btn-more,
+.btn.btn-more {
+  background: #b91c1c; /* blood color */
+  border-color: #991b1b;
+  color: #fff;
+}
+.btn-more:hover {
+  background: #991b1b;
+  border-color: #7f1d1d;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: #374151;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.icon-btn:hover {
+  background: #f3f4f6;
+}
+
+.row-actions {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .menu {
+  position: absolute;
+  top: 36px;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  display: none;
+  min-width: 200px;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+.dropdown:hover .menu {
+  display: block;
+}
+.menu-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  color: var(--text);
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.menu-btn:hover {
+  background: #f3f4f6;
+}
+/* Color-coded menu buttons (soft backgrounds) */
+.menu-processing {
+  background: #f9fafb;
+  color: #374151;
+}
+.menu-confirm {
+  background: #dbeafe;
+}
+.menu-ship {
+  background: #ffedd5;
+}
+.menu-deliver {
+  background: #dcfce7;
+}
+.menu-cancel {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.menu-refund {
+  background: #fef3c7;
+  color: #92400e;
+}
+.menu-btn.menu-processing:hover {
+  background: #e5e7eb;
+}
+.menu-btn.menu-confirm:hover {
+  background: #bfdbfe;
+}
+.menu-btn.menu-ship:hover {
+  background: #fed7aa;
+}
+.menu-btn.menu-deliver:hover {
+  background: #bbf7d0;
+}
+.menu-btn.menu-cancel:hover {
+  background: #fecaca;
+}
+.menu-btn.menu-refund:hover {
+  background: #fde68a;
+}
+
+@media (max-width: 980px) {
+  .orders-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+}

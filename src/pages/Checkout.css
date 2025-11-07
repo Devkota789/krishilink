@@ -1,0 +1,281 @@
+.checkout-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.checkout-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  width: 100%;
+  flex: 1;
+}
+.checkout-error {
+  background: #ffe8e8;
+  color: #b00020;
+  border: 1px solid #ffcdd2;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.checkout-loading,
+.checkout-empty {
+  padding: 20px;
+  text-align: center;
+}
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 20px;
+  align-items: start;
+}
+.checkout-items {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+}
+.checkout-item {
+  display: grid;
+  grid-template-columns: 56px 1fr auto auto;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+  /* Vertically center content so qty and total align */
+  align-items: center;
+}
+.checkout-item:last-child {
+  border-bottom: none;
+}
+.item-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.thumb-fallback {
+  font-weight: 600;
+  color: #666;
+}
+.checkout-summary {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 16px;
+  position: sticky;
+  top: 16px;
+}
+.checkout-summary h2 {
+  margin-top: 0;
+}
+.checkout-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.top-back-btn {
+  background: #f1f5f9;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.top-back-btn:hover {
+  background: #e2e8f0;
+}
+.checkout-summary .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.checkout-summary .total {
+  font-weight: 700;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.esewa-btn {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #1f2937; /* neutral text */
+  border: 1px solid #d1d5db; /* light gray border */
+  border-radius: 8px;
+  padding: 0px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.esewa-btn:hover {
+  background: #2bad03; /* eSewa green */
+  border-color: #4da43a;
+  color: #ffffff;
+}
+.esewa-btn .esewa-text {
+  color: inherit;
+}
+.esewa-icon {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+/* show default logo normally, green-bg logo on hover */
+.esewa-icon--hover {
+  display: none;
+}
+.esewa-btn:hover .esewa-icon--default {
+  display: none;
+}
+.esewa-btn:hover .esewa-icon--hover {
+  display: inline-block;
+}
+.back-btn {
+  width: 100%;
+  background: #f1f1f1;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+.khalti-btn {
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.khalti-btn:hover {
+  background: #5a2ea6; /* Khalti purple */
+  border-color: #5a2ea6;
+  color: #ffffff;
+}
+.khalti-text {
+  color: inherit;
+}
+.khalti-badge {
+  font-weight: 700;
+  background: #5a2ea6;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.khalti-btn:hover .khalti-badge {
+  background: #ffffff;
+  color: #5a2ea6;
+}
+.cod-btn {
+  width: 100%;
+  height: 52px;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0 12px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.cod-btn:hover {
+  background: #10b981; /* teal-ish to distinguish */
+  border-color: #059669;
+  color: #ffffff;
+}
+.cod-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.cod-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+@media (max-width: 860px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+  .checkout-summary {
+    position: static;
+  }
+}
+
+/* Modal for displaying HTML returned by COD API */
+.html-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: #ffffff; /* full page white background */
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  z-index: 1000;
+  padding: 0;
+}
+.html-modal {
+  background: #fff;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+.html-modal-body {
+  flex: 1;
+  padding: 0;
+}
+.html-modal-footer {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.modal-primary-btn {
+  background: #10b981;
+  color: #fff;
+  border: 1px solid #059669;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.modal-primary-btn:hover {
+  background: #059669;
+}
+.html-modal-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

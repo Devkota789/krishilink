@@ -1,0 +1,10 @@
+/* Example for App.css or your main container */
+.app, .home, .products-page, .contact-page, .whyus-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}

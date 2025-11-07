@@ -1,0 +1,296 @@
+:root {
+  /* Define navbar height so footer can be 0.8 of it (64px taken from layout / mobile breakpoint usage) */
+  --navbar-height: 64px;
+}
+.footer {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 230, 201, 0.95),
+    rgba(165, 214, 167, 0.9)
+  );
+  color: #0b610b;
+  text-align: center;
+  /* Height = 0.8 * navbar height */
+  height: calc(var(--navbar-height) * 0.8);
+  min-height: calc(var(--navbar-height) * 0.8);
+  padding: 0.4rem 0 0.35rem 0; /* tighter vertical padding */
+
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 -2px 8px rgba(56, 142, 60, 0.08);
+  /* Remove margin-top: auto to prevent conflicts with flexbox sticky footer */
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.95rem;
+    padding: 0.4rem 0 0.4rem 0;
+  }
+}
+
+/* Farmer journey animation (scoped to footer) */
+.footer-farmer-journey {
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Lottie wrapper (reuses space) */
+.footer-lottie-wrapper {
+  position: absolute;
+  inset: 0 0 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+.footer-lottie {
+  max-height: 100%;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.footer-farmer-svg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.footer-farmer-group {
+  /* Continuous full pass left -> right */
+  transform: translateX(0) translateY(2px);
+  animation: footerFarmerTravel 24s linear infinite;
+  opacity: 1;
+  will-change: transform;
+}
+
+@keyframes footerFarmerTravel {
+  /* Start fully off-screen left, end fully off-screen right with subtle vertical sway */
+  0% {
+    transform: translateX(-220px) translateY(2px);
+  }
+  5% {
+    transform: translateX(-120px) translateY(1.5px);
+  }
+  10% {
+    transform: translateX(-40px) translateY(1px);
+  }
+  25% {
+    transform: translateX(25vw) translateY(-0.5px);
+  }
+  40% {
+    transform: translateX(40vw) translateY(-1px);
+  }
+  50% {
+    transform: translateX(55vw) translateY(-0.6px);
+  }
+  60% {
+    transform: translateX(65vw) translateY(-1.2px);
+  }
+  75% {
+    transform: translateX(80vw) translateY(-0.2px);
+  }
+  90% {
+    transform: translateX(calc(100vw + 40px)) translateY(0.8px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 220px)) translateY(2px);
+  }
+}
+
+/* Removed footerRideSway (merged into travel) */
+
+/* Subtle motion parts */
+/* Improved walking cycle (side view) */
+/* Base seated motions */
+.footer-farmer.seated .farmer-torso {
+  animation: torsoBreathe 4.5s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes torsoBreathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Arm swing counter to legs (side view) */
+/* Remove arm swing in seated pose */
+
+/* Produce gentler bob */
+/* Produce gentle bob */
+.footer-produce ellipse,
+.footer-produce path {
+  animation: footerProduceBob 3.4s ease-in-out infinite;
+}
+.footer-produce ellipse:nth-child(2) {
+  animation-delay: 0.9s;
+}
+.footer-produce ellipse:nth-child(3) {
+  animation-delay: 1.8s;
+}
+.footer-produce ellipse:nth-child(4) {
+  animation-delay: 0.45s;
+}
+.footer-produce ellipse:nth-child(5) {
+  animation-delay: 1.3s;
+}
+@keyframes footerProduceBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.5px);
+  }
+}
+
+/* Leg & arm animation (pedaling / steering) */
+.footer-farmer.seated .footer-leg {
+  animation: legPedal 0.9s ease-in-out infinite;
+  transform-origin: 12px 50px;
+}
+.footer-farmer.seated .footer-leg.leg-front {
+  animation-delay: 0.45s;
+  transform-origin: 15px 50px;
+}
+@keyframes legPedal {
+  0%,
+  100% {
+    transform: rotate(6deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+.footer-farmer.seated .footer-arm {
+  animation: armSteer 3s ease-in-out infinite;
+  transform-origin: 10px 38px;
+}
+.footer-farmer.seated .footer-arm.arm-front {
+  animation-delay: 1.5s;
+  transform-origin: 16px 38px;
+}
+@keyframes armSteer {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+/* Head subtle nod (side) */
+.footer-farmer.seated .farmer-head {
+  animation: headNod 5.2s ease-in-out infinite;
+  transform-origin: 13px 27px;
+}
+@keyframes headNod {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(2deg);
+  }
+  55% {
+    transform: rotate(-2deg);
+  }
+}
+
+.footer-cart {
+  animation: footerCartBounce 3.4s ease-in-out infinite;
+  transform-origin: 0 0;
+}
+@keyframes footerCartBounce {
+  0%,
+  100% {
+    transform: translate(-20px, 0) scale(0.9);
+  }
+  50% {
+    transform: translate(-20px, -2.5px) scale(0.9);
+  }
+}
+
+/* Wheels static per request (no rotation) */
+.footer-wheel {
+  animation: none !important;
+}
+
+/* Decorative leaves for covering entry/exit */
+/* Removed leaf styles */
+
+/* Make sure content sits above background but below leaves if needed */
+.footer-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Full-width road */
+.footer-road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10px;
+  background: linear-gradient(to bottom, #8d6e63, #5d4037);
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.3),
+    0 -2px 4px rgba(0, 0, 0, 0.25) inset;
+  z-index: 1;
+}
+
+/* Ground shadow */
+.footer-shadow {
+  fill: rgba(0, 0, 0, 0.25);
+  filter: blur(2px);
+  animation: shadowPulse 1.8s ease-in-out infinite;
+}
+@keyframes shadowPulse {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleX(0.92);
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-farmer-svg {
+    height: 100%;
+  }
+  .footer {
+    height: calc(var(--navbar-height) * 0.72);
+    min-height: calc(var(--navbar-height) * 0.72);
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  /* Allow opting-in to motion with data-force-motion */
+  .footer-farmer-group:not([data-force-motion]),
+  .footer-cart:not([data-force-motion]),
+  .footer-wheel:not([data-force-motion]),
+  .footer-produce ellipse:not([data-force-motion]),
+  .footer-produce path:not([data-force-motion]),
+  .footer-shadow:not([data-force-motion]),
+  .farmer-torso:not([data-force-motion]) {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -1,0 +1,177 @@
+.recent-orders-panel {
+  background: #fff;
+  border: 1px solid #e3efe3;
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 1.2rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 260px;
+}
+.rop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.rop-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #2e7d32;
+  font-weight: 650;
+  letter-spacing: 0.3px;
+}
+.rop-link-btn {
+  background: transparent;
+  border: none;
+  color: #2e7d32;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.rop-link-btn:hover {
+  background: #e8f5e9;
+}
+.rop-skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.rop-skel-row {
+  height: 42px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f1f8f1 0%, #e3efe3 40%, #f1f8f1 80%);
+  background-size: 200% 100%;
+  animation: ropShimmer 1.6s linear infinite;
+}
+@keyframes ropShimmer {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.rop-error {
+  font-size: 0.8rem;
+  color: #c62828;
+}
+.rop-empty {
+  font-size: 0.75rem;
+  color: #566d56;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+.rop-cta {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.rop-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.rop-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #ecf3ec;
+  border-radius: 12px;
+  background: #fafdfb;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.rop-item:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+.rop-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+.rop-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2e7d32;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 190px;
+}
+.rop-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 500;
+}
+.rop-status {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fff;
+  min-width: 64px;
+  text-align: center;
+}
+.rop-total {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+.rop-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rop-reorder-btn {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  font-size: 0.6rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.28);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.rop-reorder-btn:hover {
+  background: #43a047;
+  box-shadow: 0 3px 10px rgba(67, 160, 71, 0.34);
+}
+@media (max-width: 680px) {
+  .recent-orders-panel {
+    padding: 1rem;
+  }
+  .rop-title {
+    max-width: 140px;
+  }
+}
